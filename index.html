@@ -16,8 +16,10 @@
         <div class="demo" @click="attachBlue = !attachBlue" :class={color}></div>
         <div class="demo" :class="color"></div>
         <div class="demo" :style="{backgroundColor: color}"></div>
+        <div class="demo" :style="[{backgroundColor: color}, {width: width + 'px'}]"></div>
         <hr>
         <input type="text" v-model="color">
+        <input type="text" v-model="width">
     </div>
 
 </body>
@@ -28,7 +30,8 @@
             attachRed: false,
             attachGreen: false,
             attachBlue: false,
-            color: 'blue'
+            color: 'blue',
+            width: 10
         },
         computed: {
             divClasses: function () {
