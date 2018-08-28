@@ -13,7 +13,10 @@
     <div id="app">
         <div class="demo" @click="attachRed = !attachRed" :class='divClasses'></div>
         <div class="demo" @click="attachGreen = !attachGreen" :class={green:attachGreen}></div>
-        <div class="demo" @click="attachBlue = !attachBlue" :class={blue:attachBlue}></div>
+        <div class="demo" @click="attachBlue = !attachBlue" :class={color}></div>
+        <div class="demo" :class="color"></div>
+        <hr>
+        <input type="text" v-model="color">
     </div>
 
 </body>
@@ -24,6 +27,7 @@
             attachRed: false,
             attachGreen: false,
             attachBlue: false,
+            color: 'blue'
         },
         computed: {
             divClasses: function(){
